@@ -1,0 +1,4 @@
+1-Las piezas traen su propia cámara y luz. Hay que eliminarlas para que se importen correctamente
+2-Las piezas son muy grandes. Estoy redimensionando a 0.6 para que sean saltables
+3-Añado gravedad (rigidbody) a toda la pieza con mucho peso para que no se mueva
+4-Añado boxcolliders individualmente a cada pieza
