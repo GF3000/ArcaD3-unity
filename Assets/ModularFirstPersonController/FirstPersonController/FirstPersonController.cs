@@ -462,7 +462,7 @@ public class FirstPersonController : MonoBehaviour
     private void Jump()
     {
         // Make a print
-        print("Jump");
+        print("isGrounded" + isGrounded );
         // Adds force to the player rigidbody to jump
         if (isGrounded)
         {
