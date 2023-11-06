@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2934155684881643681}
   m_Layer: 0
   m_Name: Pieza3
-  m_TagString: Untagged
+  m_TagString: StopTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,15 +80,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
+      propertyPath: m_TagString
+      value: StopTag
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
+      propertyPath: m_TagString
+      value: StopTag
+      objectReference: {fileID: 0}
     - target: {fileID: -1853094968961178454, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
       propertyPath: m_Depth
       value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
+      propertyPath: m_TagString
+      value: StopTag
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
       propertyPath: m_Name
       value: pieza3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
+      propertyPath: m_TagString
+      value: StopTag
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
       propertyPath: m_TagString
       value: StopTag
       objectReference: {fileID: 0}
@@ -101,6 +117,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 871939041676804134}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3229866752808328388}
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3801965795446595227}
@@ -203,6 +222,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3229866752808328388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508395523539776645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f01d25d7b259fd46bd25eb5edfe786e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!1 &5088217427575261233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8416272007918961125, guid: 3caed843f7d5a4b41a3c5694faf38a5f, type: 3}
