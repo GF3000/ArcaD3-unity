@@ -13,10 +13,12 @@ public class SpawnerPiezas : MonoBehaviour
 
     public int NUM_PIEZAS = 7;
     public int MAX_ANCHO = 10;
-    public int MAX_ALTO = 20
-    public int ALTURA = 100
+    public int MAX_ALTO = 20;
+    public int ALTURA = 100;
     public int INICIO_X = 5;
     public int INICIO_Y = 20;
+     //Create a final public var
+    public static SpawnerPiezas instance;
     void Start()
     {
         spawnPoints = new int[2];
