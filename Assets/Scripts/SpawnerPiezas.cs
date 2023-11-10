@@ -35,6 +35,7 @@ public class SpawnerPiezas : MonoBehaviour
 
     void Spawn()
     {
+
         piezaActual = Random.Range(0, piezas.Length);
         spawnPoints[0] = Random.Range(INICIO_X, MAX_ANCHO+INICIO_X);
         spawnPoints[1] = Random.Range(INICIO_Y, MAX_ALTO+INICIO_Y);
@@ -43,8 +44,12 @@ public class SpawnerPiezas : MonoBehaviour
         //     piezaActual = Random.Range(0, piezas.Length);
         // }
 
-        Vector3 spawnPosition = new Vector3(spawnPoints[0], spawnPoints[1], ALTURA);
+        Vector3 spawnPosition = new Vector3(spawnPoints[0], ALTURA, spawnPoints[1]);
         piezaAnterior = piezaActual;
         Instantiate(piezas[piezaActual], spawnPosition, Quaternion.identity);
+
+        //Make a console message so we know it's working
+        Debug.Log("Spawning " + piezas[piezaActual].name + " at " + spawnPosition);
+
     }
 }
