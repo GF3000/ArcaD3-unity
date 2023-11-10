@@ -15,8 +15,8 @@ public class SpawnerPiezas : MonoBehaviour
     public int MAX_ANCHO = 10;
     public int MAX_ALTO = 20;
     public int ALTURA = 100;
-    public int INICIO_X = 5;
-    public int INICIO_Y = 20;
+    public float INICIO_X = 5;
+    public float INICIO_Y = 20;
      //Create a final public var
     public static SpawnerPiezas instance;
     void Start()
@@ -37,8 +37,9 @@ public class SpawnerPiezas : MonoBehaviour
     {
 
         piezaActual = Random.Range(0, piezas.Length);
-        spawnPoints[0] = Random.Range(INICIO_X, MAX_ANCHO+INICIO_X);
-        spawnPoints[1] = Random.Range(INICIO_Y, MAX_ALTO+INICIO_Y);
+    
+        spawnPoints[0] = (int)Random.Range(-(MAX_ANCHO/2+INICIO_X), MAX_ANCHO/2+INICIO_X);
+        spawnPoints[1] = (int)Random.Range(-(MAX_ALTO/2+INICIO_Y), MAX_ALTO/2+INICIO_Y);
                 // while (piezaActual == piezaAnterior)
         // {
         //     piezaActual = Random.Range(0, piezas.Length);
