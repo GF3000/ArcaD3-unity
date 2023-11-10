@@ -190,6 +190,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &302075225340274767 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 3c1472f89033f344da9c8bceaf76e5e4, type: 3}

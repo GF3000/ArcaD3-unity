@@ -268,6 +268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!4 &7930581451645161858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 82726705506e13240887c5b49e652af0, type: 3}
