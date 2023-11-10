@@ -11,19 +11,17 @@ public class SpawnerPiezas : MonoBehaviour
     public int piezaActual = 0;
     public int piezaAnterior = 0;
 
-    final int NUM_PIEZAS = 7;
-    final int MAX_ANCHO = 10;
-    final int MAX_ALTO = 20;
-
-    final int ALTURA = 100;
-
-    finial int INICIO_X = 5;
-    final int INICIO_Y = 20;
+    public int NUM_PIEZAS = 7;
+    public int MAX_ANCHO = 10;
+    public int MAX_ALTO = 20
+    public int ALTURA = 100
+    public int INICIO_X = 5;
+    public int INICIO_Y = 20;
     void Start()
     {
+        spawnPoints = new int[2];
         InvokeRepeating("Spawn", spawnTime, spawnTime);
         // Initialize spawnPoints
-        spawnPoints = new Transform[transform.childCount];
 
     }
 
