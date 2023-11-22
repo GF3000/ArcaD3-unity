@@ -15,6 +15,7 @@ public class SpawnerPiezas : MonoBehaviour
     public int MAX_ANCHO = 10;
     public int MAX_ALTO = 20;
     public int ALTURA = 100;
+    public float olguraAltura = 5f;
     public float INICIO_X = 5;
     public float INICIO_Y = 20;
      //Create a final public var
@@ -59,10 +60,11 @@ public class SpawnerPiezas : MonoBehaviour
 
     Vector3 newSpawnPosition()
     {
+        int alturaGeneracion = ALTURA + (int)Random.Range(-olguraAltura, olguraAltura);
         int[] spawnPoints = new int[2];
         spawnPoints[0] = (int)Random.Range(-(MAX_ANCHO/2+INICIO_X), MAX_ANCHO/2+INICIO_X);
         spawnPoints[1] = (int)Random.Range(-(MAX_ALTO/2+INICIO_Y), MAX_ALTO/2+INICIO_Y);
-        Vector3 spawnPosition = new Vector3(spawnPoints[0], ALTURA, spawnPoints[1]);
+        Vector3 spawnPosition = new Vector3(spawnPoints[0], alturaGeneracion, spawnPoints[1]);
         return spawnPosition;
     }
 }
