@@ -42,21 +42,19 @@ public class SpawnerPiezas : MonoBehaviour
        
         piezaAnterior = piezaActual;
         
-          int rotationY = Random.Range(0, 4) * 90; // Rotación en el eje Y
-        int rotationZ = Random.Range(0, 4) * 90; // Rotación en el eje Z
-        int rotationX = Random.Range(0, 4) * 90; // Rotación en el eje X
+
 
         Vector3 spawnPosition = newSpawnPosition();
+        Quaternion spawnRotation = newSpawnRotation();
 
 
-        GameObject objetoPieza = Instantiate(piezas[piezaActual], spawnPosition,  Quaternion.Euler(rotationX, rotationY, rotationZ));
-        // Debug.Log("Spawned, isTouchingWall: " + objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingWall() + " isTouchingFloor: " + objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingFloor() + "");
+        GameObject objetoPieza = Instantiate(piezas[piezaActual], spawnPosition,  spawnRotation);
         while (objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingWall() || objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingFloor())
         {
             Debug.Log("Spawning again");
             Destroy(objetoPieza);
             spawnPosition = newSpawnPosition();
-            objetoPieza = Instantiate(piezas[piezaActual], spawnPosition,  Quaternion.Euler(rotationX, rotationY, rotationZ));
+            objetoPieza = Instantiate(piezas[piezaActual], spawnPosition,  spawnRotation);
         }
 
  
@@ -70,6 +68,15 @@ public class SpawnerPiezas : MonoBehaviour
         spawnPoints[1] = (int)Random.Range(-(MAX_ALTO/2+INICIO_Y), MAX_ALTO/2+INICIO_Y);
         Vector3 spawnPosition = new Vector3(spawnPoints[0], alturaGeneracion, spawnPoints[1]);
         return spawnPosition;
+    }
+
+    Quaternion newSpawnRotation()
+    {
+        int rotationY = Random.Range(0, 4) * 90; // Rotación en el eje Y
+        int rotationZ = Random.Range(0, 4) * 90; // Rotación en el eje Z
+        int rotationX = Random.Range(0, 4) * 90; // Rotación en el eje X
+        Quaternion spawnRotation = Quaternion.Euler(rotationX, rotationY, rotationZ);
+        return spawnRotation;
     }
 }
 
