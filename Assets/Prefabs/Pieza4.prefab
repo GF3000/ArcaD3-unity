@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6448669934591046635}
+  - component: {fileID: 3212992876472312818}
+  - component: {fileID: 2048783714269347037}
   m_Layer: 0
   m_Name: Pieza4
   m_TagString: StopTag
@@ -32,6 +34,49 @@ Transform:
   - {fileID: 592211395402350016}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &3212992876472312818
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748651865117718391}
+  serializedVersion: 4
+  m_Mass: 1000
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2048783714269347037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748651865117718391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f01d25d7b259fd46bd25eb5edfe786e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &1134146644025563691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,12 +171,6 @@ PrefabInstance:
     - {fileID: -8700617353114198275, guid: 3c1472f89033f344da9c8bceaf76e5e4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c1472f89033f344da9c8bceaf76e5e4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4828544522337308107}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c1472f89033f344da9c8bceaf76e5e4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317396201705511586}
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: 3c1472f89033f344da9c8bceaf76e5e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2425556117589644273}
@@ -145,54 +184,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1686684952684700081}
   m_SourcePrefab: {fileID: 100100000, guid: 3c1472f89033f344da9c8bceaf76e5e4, type: 3}
---- !u!1 &251116965745485690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c1472f89033f344da9c8bceaf76e5e4, type: 3}
-  m_PrefabInstance: {fileID: 1134146644025563691}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &4828544522337308107
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251116965745485690}
-  serializedVersion: 4
-  m_Mass: 1000
-  m_Drag: 1
-  m_AngularDrag: 1
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1317396201705511586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251116965745485690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f01d25d7b259fd46bd25eb5edfe786e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &302075225340274767 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 3c1472f89033f344da9c8bceaf76e5e4, type: 3}

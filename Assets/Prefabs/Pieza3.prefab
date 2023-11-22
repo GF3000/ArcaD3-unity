@@ -49,7 +49,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   wallLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!54 &239629987971493862
 Rigidbody:
   m_ObjectHideFlags: 0

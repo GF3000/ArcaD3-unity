@@ -11,11 +11,10 @@ public class SpawnerPiezas : MonoBehaviour
     public int piezaActual = 0;
     public int piezaAnterior = 0;
 
-    public int NUM_PIEZAS = 7;
     public int MAX_ANCHO = 10;
     public int MAX_ALTO = 20;
     public int ALTURA = 100;
-    public float olguraAltura = 5f;
+    public float olguraAltura = 0f;
     public float INICIO_X = 5;
     public float INICIO_Y = 20;
      //Create a final public var
@@ -43,17 +42,18 @@ public class SpawnerPiezas : MonoBehaviour
        
         Vector3 spawnPosition = newSpawnPosition();
         piezaAnterior = piezaActual;
-        // Instantiate a pieza, if it´s touching a wall, destroy it and instantiate another one
-        // Instantiate(piezas[piezaActual], spawnPosition, Quaternion.identity);
-        // Debug.Log("Spawning " + piezas[piezaActual].name + " at " + spawnPosition + "is touching wall: " + piezas[piezaActual].GetComponent<CaidaPiezas>().isTouchingWall(spawnPosition));
         
-        // //Print piezas[piezaActual].GetComponent<CaidaPiezas>() in the console to see if it has a CaidaPiezas component
-        // while (piezas[piezaActual].GetComponent<CaidaPiezas>().isTouchingWall(spawnPosition))
-        // {
-        //     spawnPosition = newSpawnPosition();
-        // }
 
-        Instantiate(piezas[piezaActual], spawnPosition, Quaternion.identity);
+        GameObject objetoPieza = Instantiate(piezas[piezaActual], spawnPosition, Quaternion.identity);
+        // Debug.Log("Spawned, isTouchingWall: " + objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingWall() + " isTouchingFloor: " + objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingFloor() + "");
+        while (objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingWall() || objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingFloor())
+        {
+            objetoPieza.GetComponent<CaidaPiezas>().set_isTouchingWall(false);
+            objetoPieza.GetComponent<CaidaPiezas>().set_isTouchingFloor(false);
+            spawnPosition = newSpawnPosition();
+            objetoPieza.transform.position = spawnPosition;
+            Debug.Log("Respawned");
+        }
 
  
     }

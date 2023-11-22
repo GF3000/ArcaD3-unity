@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7478185968717246232}
+  - component: {fileID: 6267447117139235444}
+  - component: {fileID: 1186973354623575647}
   m_Layer: 0
   m_Name: Pieza5
   m_TagString: StopTag
@@ -32,6 +34,49 @@ Transform:
   - {fileID: 8054892600479835841}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &6267447117139235444
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866639831691180828}
+  serializedVersion: 4
+  m_Mass: 1000
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1186973354623575647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866639831691180828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f01d25d7b259fd46bd25eb5edfe786e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &7512570812503195946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,12 +167,6 @@ PrefabInstance:
     - {fileID: -8700617353114198275, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7933651864250273971}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6195758803567298279}
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4857710223698319720}
@@ -219,54 +258,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02109098, y: 0.0213188, z: 0.021127213}
   m_Center: {x: 0.00011933502, y: 0.00009996582, z: -0.000034978606}
---- !u!1 &7242749758647155835 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
-  m_PrefabInstance: {fileID: 7512570812503195946}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &7933651864250273971
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7242749758647155835}
-  serializedVersion: 4
-  m_Mass: 1000
-  m_Drag: 1
-  m_AngularDrag: 1
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &6195758803567298279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7242749758647155835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f01d25d7b259fd46bd25eb5edfe786e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!4 &8054892600479835841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}

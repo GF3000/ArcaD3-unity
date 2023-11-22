@@ -6,7 +6,10 @@ public class CaidaPiezas : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody rb;
+
     public LayerMask wallLayer; // Set this in the Unity editor to the layer your walls are on
+    public bool isTouchingWall = false;
+    public bool isTouchingFloor = false;
 
     void Start()
     {
@@ -27,16 +30,33 @@ public class CaidaPiezas : MonoBehaviour
         {
             //rb.velocity = new Vector3(0,0,0);
             rb.isKinematic = true;
+            isTouchingFloor = true;
+        }
+        if (collision.gameObject.CompareTag("Pared"))
+        {
+            isTouchingWall = true;
+            // Break the game
+            Debug.Log("Game Over");
         }
     }
 
-    public bool isTouchingWall(Vector3 position)
+    public bool get_isTouchingWall()
     {
-        // Check if the object is touching a object tagged as a "Pared"
-        return Physics.CheckSphere(position, 0.1f, LayerMask.GetMask("Pared"));
+        return isTouchingWall;  
+    }
 
+    public bool get_isTouchingFloor()
+    {
+        return isTouchingFloor;
+    }
 
-        // int random = (int)Random.Range(0f, 2f);
-        // return random == 1;
+    public void set_isTouchingWall(bool value)
+    {
+        isTouchingWall = value;
+    }
+
+    public void set_isTouchingFloor(bool value)
+    {
+        isTouchingFloor = value;
     }
 }
