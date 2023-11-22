@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CaidaPiezas : MonoBehaviour
@@ -32,6 +33,7 @@ public class CaidaPiezas : MonoBehaviour
             //rb.velocity = new Vector3(0,0,0);
             rb.isKinematic = true;
             isTouchingFloor = true;
+            gameObject.tag = "StopTag";
         }
         if (collision.gameObject.CompareTag("Pared"))
 
@@ -39,10 +41,14 @@ public class CaidaPiezas : MonoBehaviour
             isTouchingWall = true;
             // Break the game
             //Debug.Log it self name
-            Debug.Log(gameObject.name + "  Tocando pared");
+            //Debug.Log(gameObject.name + "  Tocando pared");
             //Cal Spawn function from SpawnerPiezas.cs
             Destroy(gameObject);
 
+        }
+
+        if (collision.gameObject.CompareTag("Player") && !gameObject.CompareTag("StopTag")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

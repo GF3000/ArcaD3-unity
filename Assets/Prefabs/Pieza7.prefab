@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3715755804826736916}
   m_Layer: 0
   m_Name: Pieza7
-  m_TagString: StopTag
+  m_TagString: Muerte
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +77,8 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
+  isTouchingWall: 0
+  isTouchingFloor: 0
 --- !u!1001 &3876274054652759928
 PrefabInstance:
   m_ObjectHideFlags: 0

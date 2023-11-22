@@ -6,6 +6,8 @@ TagManager:
   tags:
   - StopTag
   - Pared
+  - Muerte
+  - PlayerM
   layers:
   - Default
   - TransparentFX
