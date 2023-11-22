@@ -33,26 +33,30 @@ public class SpawnerPiezas : MonoBehaviour
         
     }
 
-    void Spawn()
+    public void Spawn()
     {
 
         piezaActual = Random.Range(0, piezas.Length);
         // piezaActual = 2;
     
        
-        Vector3 spawnPosition = newSpawnPosition();
         piezaAnterior = piezaActual;
         
+          int rotationY = Random.Range(0, 4) * 90; // Rotación en el eje Y
+        int rotationZ = Random.Range(0, 4) * 90; // Rotación en el eje Z
+        int rotationX = Random.Range(0, 4) * 90; // Rotación en el eje X
 
-        GameObject objetoPieza = Instantiate(piezas[piezaActual], spawnPosition, Quaternion.identity);
+        Vector3 spawnPosition = newSpawnPosition();
+
+
+        GameObject objetoPieza = Instantiate(piezas[piezaActual], spawnPosition,  Quaternion.Euler(rotationX, rotationY, rotationZ));
         // Debug.Log("Spawned, isTouchingWall: " + objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingWall() + " isTouchingFloor: " + objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingFloor() + "");
         while (objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingWall() || objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingFloor())
         {
-            objetoPieza.GetComponent<CaidaPiezas>().set_isTouchingWall(false);
-            objetoPieza.GetComponent<CaidaPiezas>().set_isTouchingFloor(false);
+            Debug.Log("Spawning again");
+            Destroy(objetoPieza);
             spawnPosition = newSpawnPosition();
-            objetoPieza.transform.position = spawnPosition;
-            Debug.Log("Respawned");
+            objetoPieza = Instantiate(piezas[piezaActual], spawnPosition,  Quaternion.Euler(rotationX, rotationY, rotationZ));
         }
 
  

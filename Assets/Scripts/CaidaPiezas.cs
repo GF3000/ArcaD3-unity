@@ -11,6 +11,7 @@ public class CaidaPiezas : MonoBehaviour
     public bool isTouchingWall = false;
     public bool isTouchingFloor = false;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,10 +34,15 @@ public class CaidaPiezas : MonoBehaviour
             isTouchingFloor = true;
         }
         if (collision.gameObject.CompareTag("Pared"))
+
         {
             isTouchingWall = true;
             // Break the game
-            Debug.Log("Game Over");
+            //Debug.Log it self name
+            Debug.Log(gameObject.name + "  Tocando pared");
+            //Cal Spawn function from SpawnerPiezas.cs
+            Destroy(gameObject);
+
         }
     }
 
