@@ -15,8 +15,8 @@ public class SpawnerPiezas : MonoBehaviour
     public int MAX_ANCHO = 10;
     public int MAX_ALTO = 20;
     public int ALTURA = 100;
-    public int INICIO_X = 5;
-    public int INICIO_Y = 20;
+    public float INICIO_X = 5;
+    public float INICIO_Y = 20;
      //Create a final public var
     public static SpawnerPiezas instance;
     void Start()
@@ -37,19 +37,34 @@ public class SpawnerPiezas : MonoBehaviour
     {
 
         piezaActual = Random.Range(0, piezas.Length);
-        spawnPoints[0] = Random.Range(INICIO_X, MAX_ANCHO+INICIO_X);
-        spawnPoints[1] = Random.Range(INICIO_Y, MAX_ALTO+INICIO_Y);
-                // while (piezaActual == piezaAnterior)
+        // piezaActual = 2;
+    
+       
+        Vector3 spawnPosition = newSpawnPosition();
+        piezaAnterior = piezaActual;
+        // Instantiate a pieza, if it´s touching a wall, destroy it and instantiate another one
+        // Instantiate(piezas[piezaActual], spawnPosition, Quaternion.identity);
+        // Debug.Log("Spawning " + piezas[piezaActual].name + " at " + spawnPosition + "is touching wall: " + piezas[piezaActual].GetComponent<CaidaPiezas>().isTouchingWall(spawnPosition));
+        
+        // //Print piezas[piezaActual].GetComponent<CaidaPiezas>() in the console to see if it has a CaidaPiezas component
+        // while (piezas[piezaActual].GetComponent<CaidaPiezas>().isTouchingWall(spawnPosition))
         // {
-        //     piezaActual = Random.Range(0, piezas.Length);
+        //     spawnPosition = newSpawnPosition();
         // }
 
-        Vector3 spawnPosition = new Vector3(spawnPoints[0], ALTURA, spawnPoints[1]);
-        piezaAnterior = piezaActual;
         Instantiate(piezas[piezaActual], spawnPosition, Quaternion.identity);
 
-        //Make a console message so we know it's working
-        Debug.Log("Spawning " + piezas[piezaActual].name + " at " + spawnPosition);
+ 
+    }
 
+    Vector3 newSpawnPosition()
+    {
+        int[] spawnPoints = new int[2];
+        spawnPoints[0] = (int)Random.Range(-(MAX_ANCHO/2+INICIO_X), MAX_ANCHO/2+INICIO_X);
+        spawnPoints[1] = (int)Random.Range(-(MAX_ALTO/2+INICIO_Y), MAX_ALTO/2+INICIO_Y);
+        Vector3 spawnPosition = new Vector3(spawnPoints[0], ALTURA, spawnPoints[1]);
+        return spawnPosition;
     }
 }
+
+
