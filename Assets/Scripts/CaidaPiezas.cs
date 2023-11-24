@@ -39,15 +39,12 @@ public class CaidaPiezas : MonoBehaviour
 
         {
             isTouchingWall = true;
-            // Break the game
-            //Debug.Log it self name
-            //Debug.Log(gameObject.name + "  Tocando pared");
-            //Cal Spawn function from SpawnerPiezas.cs
             Destroy(gameObject);
 
         }
 
         if (collision.gameObject.CompareTag("Player") && !gameObject.CompareTag("StopTag")){
+            Debug.Log("Game Over");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

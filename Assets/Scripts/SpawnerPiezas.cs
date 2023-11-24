@@ -7,7 +7,6 @@ public class SpawnerPiezas : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] piezas;
     public float spawnTime = 5f;
-    public int[] spawnPoints;
     public int piezaActual = 0;
     public int piezaAnterior = 0;
 
@@ -21,9 +20,7 @@ public class SpawnerPiezas : MonoBehaviour
     public static SpawnerPiezas instance;
     void Start()
     {
-        spawnPoints = new int[2];
         InvokeRepeating("Spawn", spawnTime, spawnTime);
-        // Initialize spawnPoints
 
     }
 
