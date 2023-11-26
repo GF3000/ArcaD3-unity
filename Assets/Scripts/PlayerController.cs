@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float Gravity = 9.8f;
     private float velocity = 0;
 
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
