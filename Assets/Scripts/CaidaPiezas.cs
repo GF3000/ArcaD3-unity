@@ -8,9 +8,10 @@ public class CaidaPiezas : MonoBehaviour
     // Start is called before the first frame update
     public Rigidbody rb;
 
-    public LayerMask wallLayer; // Set this in the Unity editor to the layer your walls are on
     public bool isTouchingWall = false;
     public bool isTouchingFloor = false;
+    public bool godMode = true;
+
 
 
     void Start()
@@ -43,7 +44,7 @@ public class CaidaPiezas : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Player") && !gameObject.CompareTag("StopTag")){
+        if (collision.gameObject.CompareTag("Player") && !gameObject.CompareTag("StopTag") && !godMode){
             Debug.Log("Game Over");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -59,13 +60,18 @@ public class CaidaPiezas : MonoBehaviour
         return isTouchingFloor;
     }
 
-    public void set_isTouchingWall(bool value)
+    public void setisTouchingWall(bool value)
     {
         isTouchingWall = value;
     }
 
-    public void set_isTouchingFloor(bool value)
+    public void setisTouchingFloor(bool value)
     {
         isTouchingFloor = value;
+    }
+
+    public void setGodMode(bool value)
+    {
+        godMode = value;
     }
 }

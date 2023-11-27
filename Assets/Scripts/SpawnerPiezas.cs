@@ -16,6 +16,7 @@ public class SpawnerPiezas : MonoBehaviour
     public float olguraAltura = 0f;
     public float INICIO_X = 5;
     public float INICIO_Y = 20;
+    public bool godMode = false;
      //Create a final public var
     public static SpawnerPiezas instance;
     void Start()
@@ -46,6 +47,7 @@ public class SpawnerPiezas : MonoBehaviour
 
 
         GameObject objetoPieza = Instantiate(piezas[piezaActual], spawnPosition,  spawnRotation);
+        objetoPieza.GetComponent<CaidaPiezas>().setGodMode(godMode);
         while (objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingWall() || objetoPieza.GetComponent<CaidaPiezas>().get_isTouchingFloor())
         {
             Debug.Log("Spawning again");

@@ -47,11 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
   isTouchingWall: 0
   isTouchingFloor: 0
+  godMode: 0
 --- !u!54 &3193435420112560855
 Rigidbody:
   m_ObjectHideFlags: 0
