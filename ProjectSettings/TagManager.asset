@@ -8,6 +8,7 @@ TagManager:
   - Pared
   - Muerte
   - PlayerM
+  - Suelo
   layers:
   - Default
   - TransparentFX
