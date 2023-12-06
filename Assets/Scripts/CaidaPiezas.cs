@@ -10,7 +10,7 @@ public class CaidaPiezas : MonoBehaviour
 
     public bool isTouchingWall = false;
     public bool isTouchingFloor = false;
-    public bool godMode = true;
+    public bool godMode = false;
 
 
 
