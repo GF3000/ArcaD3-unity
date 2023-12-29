@@ -132,12 +132,12 @@ public class FirstPersonController : MonoBehaviour
     #endregion
 
 
-//     void OnCollisionEnter(Collision collision) {
-//     if (collision.gameObject.CompareTag("StopTag") || collision.gameObject.CompareTag("Suelo"))
-//     {
-//         isGrounded = true;
-//     }
-// }
+     void OnCollisionEnter(Collision collision) {
+     if (collision.gameObject.CompareTag("StopTag") || collision.gameObject.CompareTag("Suelo"))
+     {
+         isGrounded = true;
+     }
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
