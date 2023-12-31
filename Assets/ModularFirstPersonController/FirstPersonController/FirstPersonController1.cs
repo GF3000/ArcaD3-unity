@@ -4,8 +4,10 @@
 //
 // "Enable/Disable Headbob, Changed look rotations - should result in reduced camera jitters" || version 1.0.1
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -138,6 +140,7 @@ public class FirstPersonController : MonoBehaviour
         playerCamera.fieldOfView = PlayerPrefs.GetFloat("Fov", fov);
         mouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", mouseSensitivity);
     }
+    
     void OnCollisionEnter(Collision collision) { 
         if (collision.gameObject.CompareTag("StopTag") || collision.gameObject.CompareTag("Suelo")) {
             isGrounded = true;
@@ -149,6 +152,7 @@ public class FirstPersonController : MonoBehaviour
 
         crosshairObject = GetComponentInChildren<Image>();
 
+        AudioListener.volume = PlayerPrefs.GetFloat("Volumen", 1.0f);
         // Set internal variables
         playerCamera.fieldOfView = PlayerPrefs.GetFloat("FOV", fov);
         mouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", mouseSensitivity);
@@ -370,7 +374,7 @@ public class FirstPersonController : MonoBehaviour
 
         #endregion
 
-        //CheckGround();
+        CheckGround();
         
 
         if(enableHeadBob)
@@ -456,23 +460,51 @@ public class FirstPersonController : MonoBehaviour
         #endregion
     }
 
+    
     // Sets isGrounded based on a raycast sent straigth down from the player object
-    // private void CheckGround()
-    // {
-    //     Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
-    //     Vector3 direction = transform.TransformDirection(Vector3.down);
-    //     float distance = .75f;
+    /*private void CheckGround()
+    {
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
+        Vector3 direction = transform.TransformDirection(Vector3.down);
+        float distance = .75f;
 
-    //     if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
-    //     {
-    //         Debug.DrawRay(origin, direction * distance, Color.red);
-    //         isGrounded = true;
-    //     }
-    //     else
-    //     {
-    //         isGrounded = false;
-    //     }
-    // }
+        if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
+        {
+            Debug.DrawRay(origin, direction * distance, Color.red);
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }*/
+    private void CheckGround()
+    {
+        Vector3 halfExtents = new Vector3(0.5f, 0.05f, 0.5f);
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
+        Vector3 direction = transform.TransformDirection(Vector3.down);
+        float distance = 0.4f;
+
+        if (Physics.BoxCast(origin, halfExtents, direction, out RaycastHit hit, Quaternion.identity, distance))
+        {
+            Debug.DrawLine(origin, hit.point, Color.blue);
+            isGrounded = true;
+        }
+        else
+        {
+            Debug.DrawRay(origin, direction * distance, Color.red);
+            isGrounded = false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
+        Vector3 direction = transform.TransformDirection(Vector3.down);
+        float distance = 0.4f;
+
+        Debug.DrawRay(origin, direction * distance, Color.green);
+    }
 
     private void Jump()
     {

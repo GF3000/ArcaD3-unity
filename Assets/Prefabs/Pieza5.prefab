@@ -74,11 +74,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
   isTouchingWall: 0
   isTouchingFloor: 0
+  godMode: 0
 --- !u!1001 &7512570812503195946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,15 +139,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8391222552659086748, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
       propertyPath: m_TagString
-      value: StopTag
+      value: Muerte
       objectReference: {fileID: 0}
     - target: {fileID: -7146521406498821007, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
       propertyPath: m_TagString
-      value: StopTag
+      value: Muerte
       objectReference: {fileID: 0}
     - target: {fileID: -516098083770646512, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
       propertyPath: m_TagString
-      value: StopTag
+      value: Muerte
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
       propertyPath: m_Name
@@ -161,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8416272007918961125, guid: 45c76fd64f6b7d1409e93f97f0aa5b8c, type: 3}
       propertyPath: m_TagString
-      value: StopTag
+      value: Muerte
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

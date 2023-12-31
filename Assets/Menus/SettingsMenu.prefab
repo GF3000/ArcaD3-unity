@@ -129,11 +129,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: EASY
-      m_Image: {fileID: 0}
     - m_Text: NORMAL
       m_Image: {fileID: 0}
-    - m_Text: HARD
+    - m_Text: EASY
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1527,7 +1525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7020833220484167341}
-  - component: {fileID: 1766437663014230140}
+  - component: {fileID: 7485729803618638368}
   m_Layer: 5
   m_Name: Resolution
   m_TagString: Untagged
@@ -1556,7 +1554,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 538.75, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1766437663014230140
+--- !u!114 &7485729803618638368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1565,10 +1563,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2742991827675804979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0ffbe1ddebd984fb87a2ccf4ac3dbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e4a2409d7c154641857cbb50bf5eebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdownResolucion: {fileID: 6905937766200756091}
+  resolutionDropdown: {fileID: 6905937766200756091}
+  fullScreenToggle: {fileID: 338399319737368743}
 --- !u!1 &2771371859343525327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2225,7 @@ RectTransform:
   m_Father: {fileID: 4052409197848231033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.81333333}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2277,6 +2276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8182677499874328277}
+  - component: {fileID: 4168937524622103064}
   m_Layer: 5
   m_Name: Difficulty
   m_TagString: Untagged
@@ -2305,6 +2305,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 538.75, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4168937524622103064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3403052934449077574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58acc061ac2e99f40b844ea7288c40f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 7352836998152612839}
 --- !u!1 &3407509250899511066
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,7 +4672,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2976749647494450284}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.81333333
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6014,7 +6027,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -7.5, y: -0.5}
-  m_SizeDelta: {x: -38.6675, y: -9.4524}
+  m_SizeDelta: {x: -71.7051, y: -9.4524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7036130504460512696
 CanvasRenderer:
@@ -6044,7 +6057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EASY
+  m_text: NORMAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80775a4684f2e0d49971684165b50a99, type: 2}
   m_sharedMaterial: {fileID: -2004681041405747518, guid: 80775a4684f2e0d49971684165b50a99, type: 2}
@@ -6071,7 +6084,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.7
+  m_fontSize: 25.8
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
