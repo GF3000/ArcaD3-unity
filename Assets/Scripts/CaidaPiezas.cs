@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class CaidaPiezas : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Rigidbody rb;
 
     public bool isTouchingWall = false;
     public bool isTouchingFloor = false;
     public bool godMode = false;
-
-
+    
 
     void Start()
     {
@@ -44,9 +42,10 @@ public class CaidaPiezas : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Player") && !gameObject.CompareTag("StopTag") && !godMode){
+        if (collision.gameObject.CompareTag("Player") && !godMode){
             Debug.Log("Game Over");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            collision.gameObject.SendMessage("Death");
+            //SceneManager.LoadScene("Arcad3-escenario redimensionado");
         }
     }
 

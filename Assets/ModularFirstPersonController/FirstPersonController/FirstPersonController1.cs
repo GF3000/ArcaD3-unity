@@ -38,6 +38,7 @@ public class FirstPersonController : MonoBehaviour
     private float yaw = 0.0f;
     private float pitch = 0.0f;
     private Image crosshairObject;
+    
 
     #region Camera Zoom Variables
 
@@ -132,12 +133,16 @@ public class FirstPersonController : MonoBehaviour
     #endregion
 
 
-//     void OnCollisionEnter(Collision collision) {
-//     if (collision.gameObject.CompareTag("StopTag") || collision.gameObject.CompareTag("Suelo"))
-//     {
-//         isGrounded = true;
-//     }
-// }
+    public void UpdateSettings()
+    {
+        playerCamera.fieldOfView = PlayerPrefs.GetFloat("Fov", fov);
+        mouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", mouseSensitivity);
+    }
+    void OnCollisionEnter(Collision collision) { 
+        if (collision.gameObject.CompareTag("StopTag") || collision.gameObject.CompareTag("Suelo")) {
+            isGrounded = true;
+        }
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -145,7 +150,8 @@ public class FirstPersonController : MonoBehaviour
         crosshairObject = GetComponentInChildren<Image>();
 
         // Set internal variables
-        playerCamera.fieldOfView = fov;
+        playerCamera.fieldOfView = PlayerPrefs.GetFloat("FOV", fov);
+        mouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", mouseSensitivity);
         originalScale = transform.localScale;
         jointOriginalPos = joint.localPosition;
 
@@ -161,6 +167,7 @@ public class FirstPersonController : MonoBehaviour
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         if(crosshair)

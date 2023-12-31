@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class FinJuego : MonoBehaviour
 {
+    public GameObject menuGameOver;
     void OnTriggerEnter(Collider other)
     {
-        
-        //restart the game
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        menuGameOver.SetActive(true);
     }
 }
