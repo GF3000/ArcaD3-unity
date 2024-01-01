@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class CaidaPiezas : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Rigidbody rb;
 
     public bool isTouchingWall = false;
     public bool isTouchingFloor = false;
     public bool godMode = false;
-
-
+    
 
     void Start()
     {
@@ -35,6 +33,7 @@ public class CaidaPiezas : MonoBehaviour
             rb.isKinematic = true;
             isTouchingFloor = true;
             gameObject.tag = "StopTag";
+            AddTagRecursively(transform, "StopTag");
         }
         if (collision.gameObject.CompareTag("Pared"))
 
@@ -44,10 +43,13 @@ public class CaidaPiezas : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Player") && !gameObject.CompareTag("StopTag") && !godMode){
-            Debug.Log("Game Over");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+    }
+    void AddTagRecursively(Transform trans, string tag)
+    {
+        trans.gameObject.tag = tag;
+        if(trans.childCount > 0)
+            foreach(Transform t in trans)
+                AddTagRecursively(t, tag);
     }
 
     public bool get_isTouchingWall()

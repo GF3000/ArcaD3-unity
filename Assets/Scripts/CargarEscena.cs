@@ -1,11 +1,18 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CargarEscena : MonoBehaviour
 {
-    // Este método se llama cuando se pulsa el botón
+    public float segundosEspera = 2f;
     public void Cargar()
     {
+        StartCoroutine(Esperar(segundosEspera));
         SceneManager.LoadScene("Arcad3-escenario redimensionado");
+    }
+    
+    private IEnumerator Esperar(float segundos)
+    {
+        yield return new WaitForSeconds(segundos);
     }
 }
