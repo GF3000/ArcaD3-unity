@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu Principal.unity
+    guid: 3e380faba22340443b7310eb3a5217d9
+  - enabled: 1
     path: Assets/Scenes/Arcad3-escenario redimensionado.unity
     guid: 97610ec4e7e649749a2c4c61f794c580
   m_configObjects: {}
