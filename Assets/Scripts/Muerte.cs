@@ -12,7 +12,10 @@ public class Muerte : MonoBehaviour
         {
             Time.timeScale = 0f;
             gameOverMenu.SetActive(true);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1ba210a319e6f6da343a24c64ead050a3abab63d
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
