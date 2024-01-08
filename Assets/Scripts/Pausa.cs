@@ -27,6 +27,7 @@ public class Pausa : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("pausa");
             Time.timeScale = 0f;
             menuPausa.SetActive(true);
             Cursor.lockState = CursorLockMode.None;

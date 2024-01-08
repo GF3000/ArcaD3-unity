@@ -8,7 +8,8 @@ public class CargarEscena : MonoBehaviour
     public void Cargar()
     {
         StartCoroutine(Esperar(segundosEspera));
-        SceneManager.LoadScene("Arcad3-escenario redimensionado");
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
     }
     
     private IEnumerator Esperar(float segundos)

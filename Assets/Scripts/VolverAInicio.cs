@@ -8,7 +8,8 @@ public class VolverAInicio : MonoBehaviour
     public void Cargar()
     {
         StartCoroutine(Esperar(segundosEspera));
-        SceneManager.LoadScene("Menu Principal");
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
     
     private IEnumerator Esperar(float segundos)
