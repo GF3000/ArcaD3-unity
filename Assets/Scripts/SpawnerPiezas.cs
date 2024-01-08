@@ -21,6 +21,26 @@ public class SpawnerPiezas : MonoBehaviour
     public static SpawnerPiezas instance;
     void Start()
     {
+        print("SpawnerPiezas. Modo: " + PlayerPrefs.GetInt("Mode", 0) );
+
+        //Set spawnTime depending on the MODE
+        if (PlayerPrefs.GetInt("Mode", 0) == 0)
+        {
+            spawnTime = 0.5f;
+        }
+        else if (PlayerPrefs.GetInt("Mode", 0) == 1) //Modo normal
+        {
+            spawnTime = 0.7f;
+        }
+        else if (PlayerPrefs.GetInt("Mode", 0) == 2) // Modo fácil
+        {
+            spawnTime = 0.8f;
+        }
+        else
+        {
+            spawnTime = 0.7f;
+        }
+
         InvokeRepeating("Spawn", spawnTime, spawnTime);
 
     }
