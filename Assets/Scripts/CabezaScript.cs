@@ -14,7 +14,8 @@ public class CabezaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WarningCheck();
+        if (PlayerPrefs.GetInt("Mode", 0) != 0) // Si no es modo difícil (modo facil)
+            WarningCheck();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,7 +27,7 @@ public class CabezaScript : MonoBehaviour
 
     public void Death()
     {
-        if (PlayerPrefs.GetInt("Mode", 0) == 0)
+        if (PlayerPrefs.GetInt("Mode", 0) != 2) // Si no es modo infinito (modo facil)
         {
             Time.timeScale = 0f;
             gameOverMenu.SetActive(true);
